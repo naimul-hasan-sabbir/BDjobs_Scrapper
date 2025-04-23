@@ -1,4 +1,4 @@
-BASE_URL = "https://www.bdjobs.com/"
+BASE_URL = "https://jobs.bdjobs.com/"
 JOB_LISTING_URL = f"{BASE_URL}jobsearch.asp"
 OUTPUT_FILE = "output/jobs.txt"
 TIMEOUT = 10  # seconds
