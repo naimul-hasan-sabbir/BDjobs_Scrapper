@@ -1,13 +1,18 @@
-# BDjobs Scraper
+# BDjobs Scrapper
 
-BDjobs Scraper is a Python application that automates the extraction of live IT job listings from the BDjobs website. The collected job data is saved in a structured text file for easy access and review.
+A Python project to scrape job listings from [bdjobs.com](https://www.bdjobs.com/) using Selenium. The script extracts job titles and company names from the Hot Jobs section and saves them to a text file.
 
 ## Features
 
-- Scrapes live IT job listings from BDjobs.com
-- Saves job data (title, company, location, date) to a text file
-- Modular, maintainable, and extensible codebase
-- Easy to configure and run
+- Uses Selenium with ChromeDriver (managed by webdriver-manager)
+- Scrapes job title and company name from bdjobs.com
+- Handles pagination with concurrency for faster scraping
+- Outputs results to `output/jobs.txt`
+
+## Requirements
+
+- Python 3.8+
+- Google Chrome browser
 
 ## Project Structure
 
@@ -32,36 +37,69 @@ Pipfile.lock               # Locked dependency versions
 README.md                  # Project documentation
 ```
 
-## Installation
+## Setup
 
-1. Clone this repository:
+1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/BDjobs_Scraper.git
-   cd BDjobs_Scraper
+   git clone <your-repo-url>
+   cd BDjobs_Scrapper
    ```
-2. Install dependencies using pipenv:
+2. **Install dependencies:**
    ```sh
    pipenv install
    ```
+   Or, if you use pip:
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. **Run the scraper:**
+   ```sh
+   pipenv run python main.py
+   ```
+   Or, if using pip:
+   ```sh
+   python main.py
+   ```
 
-## Usage
+## Output Example
 
-To run the scraper and save job listings to `output/jobs.txt`:
+Below is a sample of the output generated in `output/jobs.txt`:
 
-```sh
-pipenv run python main.py
+```
+Title: Manager-Hospital
+Company: Ad-din Foundation
+Location:
+Posted on:
+
+Title: Senior UI/UX Designer
+Company: BYSL Global Technology Group
+Location:
+Posted on:
+
+Title: Officer-Brand
+Company: Kohinoor Chemical Co. (BD) Ltd.
+Location:
+Posted on:
+
+Title: Management Trainee
+Company: Mutual Trust Bank PLC
+Location:
+Posted on:
+
+Title: Executive - Manufacturing Pl...
+Company: A Well-Reputed Top-Ranking Pharmaceutical Company
+Location:
+Posted on:
+
+... (more jobs)
 ```
 
-## Customization
+## Notes
 
-- Update scraping logic in `scraper/bdjobs.py` if the BDjobs website structure changes.
-- Adjust output formatting in `utils/file_handler.py` as needed.
-- Modify configuration in `config/settings.py` for custom settings.
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+- The script uses Selenium and webdriver-manager to automatically handle ChromeDriver installation.
+- Make sure you have Google Chrome installed and up to date.
+- If you want to run the scraper in headless mode, uncomment the `headless` option in `bdjobs.py`.
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
