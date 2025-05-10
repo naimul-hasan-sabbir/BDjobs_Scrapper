@@ -41,7 +41,7 @@ README.md                  # Project documentation
 
 1. **Clone the repository:**
    ```sh
-   git clone <your-repo-url>
+   git clone https://github.com/your-username/BDjobs_Scrapper.git
    cd BDjobs_Scrapper
    ```
 2. **Install dependencies:**
